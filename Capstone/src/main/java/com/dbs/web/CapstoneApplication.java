@@ -10,5 +10,4 @@ public class CapstoneApplication {
 		
 		SpringApplication.run(CapstoneApplication.class, args);
 	}
-
 }

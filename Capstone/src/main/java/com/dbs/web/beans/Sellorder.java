@@ -2,24 +2,29 @@ package com.dbs.web.beans;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Sellorder {
+public class SellOrder {
+	
 	@Id
 	private String sellid;
 	@OneToOne
+	@JoinColumn(name="instrumentid")
 	private Instrument instrumentid;
 	@OneToOne
+	@JoinColumn(name="clientid")
 	private Client clientid;
-	private boolean status;
-	private int quanity;
+	private String status;
+	private int quantity;
 	private int remainingquantity;
 	private int price;
 	private LocalDate orderdate;
-	public Sellorder() {
+	public SellOrder() {
 		// TODO Auto-generated constructor stub
 	}
 	public String getSellid() {
@@ -40,17 +45,17 @@ public class Sellorder {
 	public void setClientid(Client clientid) {
 		this.clientid = clientid;
 	}
-	public boolean isStatus() {
+	public String isStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getQuanity() {
-		return quanity;
+	public int getQuantity() {
+		return quantity;
 	}
-	public void setQuanity(int quanity) {
-		this.quanity = quanity;
+	public void setQuantity(int quanity) {
+		this.quantity = quanity;
 	}
 	public int getRemainingquantity() {
 		return remainingquantity;

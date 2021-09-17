@@ -33,7 +33,7 @@ public class Instrument {
 		this.facevalue = facevalue;
 	}
 	public LocalDate getDate() {
-		return getDate();
+		return this.expirydate;
 	}
 	public void setDate(LocalDate date) {
 		this.expirydate = date;
